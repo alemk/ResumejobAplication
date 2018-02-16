@@ -1,8 +1,11 @@
 package com.example.demo;
 
+import org.hibernate.validator.constraints.Email;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -10,6 +13,7 @@ import javax.validation.constraints.NotNull;
 public class Applicant {
 
     @Autowired
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     int id;
     @NotNull
@@ -17,6 +21,7 @@ public class Applicant {
     @NotNull
     private String lastname;
     @NotNull
+    @Email
     private String email;
 
     public int getId() {

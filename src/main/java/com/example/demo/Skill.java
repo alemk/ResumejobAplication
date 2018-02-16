@@ -16,7 +16,6 @@ public class Skill {
 
     @NotNull
     private String skillName;
-
     @NotNull
     private String rating;
 

@@ -3,15 +3,17 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Experiance {
-@Autowired
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private int id;
-@NotNull
+    @NotNull
     private String jobExperiance;
 
     public int getId() {

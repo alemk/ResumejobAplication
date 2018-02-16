@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+</head>
+<body>
+
+<!-- navigation link -->
+<div th:replace="template::navlinks">
+</div>
+
+<div class="row">
+    <div class="col-sm-7">
+        welcome to Montgomery college job application site
+    </div>
+
+</div>
+<div class="container">
+    <p>Applicant</p>
+    <div class="row" th:each="applicant : ${applicants}">
+        <span th:text="${applicant.firstname}">-</span>
+        <span th:text="${applicant.lastname}"></span>
+        <span th:text="${applicant.email}"></span>
+    </div>
+
+    <p>Education</p>
+    <div class="row" th:each="education : ${educations}" >
+        <span th:inline="text">[[${education.degreetype}]]</span>
+        <span th:inline="text">[[${education.degreename}]]</span>
+        <span th:inline="text">[[${education.school}]]</span>
+        <span th:inline="text">[[${education.year}]]</span>
+
+    </div>
+    <p>Experiance</p>
+    <div class="row" th:each="experience : ${experiences}">
+        <span th:text="${experience.jobExperiance}"></span>
+    </div>
+
+    <div class="row" th:each="skill: ${skills}">
+        <p>Skill</p>
+        <span th:inline="text">
+            [[${skill.skillName}]] , [[${skill.rating}]]</span>
+
+    </div>
+</div>
+</body>
+</html>

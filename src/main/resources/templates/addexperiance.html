@@ -10,7 +10,7 @@
 <div th:replace="template::navlinks"></div>
 <div class="row">
     <div class="col-sm-8"><!-- add experiance form section begins here -->
-        <form th:action="@{/addexperiance}" th:object="${experiances}" th:method="post" class="form-group">
+        <form th:action="@{/addexperiance}" th:object="${experiance}" th:method="post" class="form-group">
 
             <input type="hidden" th:field="*{id}"/>
 
@@ -28,8 +28,6 @@
 
 <div class="row">
     <div class="col-sm-7">
-        <form
-
 
     </div>
 

@@ -13,12 +13,14 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li><a th:href="@{'/'}">home</a></li>
-                <li><a th:href="@{'applicant'}">Add your info</a></li>
-                <li><a th:href="@{'addeducation'}">Add Education</a></li>
-                <li><a th:href="@{'addskill'}">Add Skills</a></li>
-                <li><a th:href="@{'addexperiance'}">Add experiance</a></li>
-                <li><a th:href="@{'summary'}">Summary</a></li>
+               <!-- <li><a th:href="@{'/'}">home</a></li>-->
+               <!-- <li><a th:href="@{'addapplicant'}">Add your info</a></li>-->
+                <li sec:authorize="hasAuthority('ADMIN')">
+                    <a th:href="@{'addachivement'}">Add Education</a>
+                </li>
+                <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{'addskill'}">Add Skills</a></li>
+                <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{'addexperiance'}">Add experiance</a></li>
+                <li><a th:href="@{'resumesummary'}">Summary</a></li>
             </ul>
         </div>
     </nav>

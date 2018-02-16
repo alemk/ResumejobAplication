@@ -10,13 +10,25 @@
 <div th:replace="template::navlinks"></div>
 <div class="row">
     <div class="col-sm-8"><!-- add skill form section begins here -->
-        <form th:action="@{/addachivement}" th:object="${achivements}" th:method="post" class="form-group">
+        <form th:action="@{/addachivement}" th:object="${achivement}" th:method="post" class="form-group">
 
             <input type="hidden" th:field="*{id}"/>
 
-            <span th:if="${#fields.hasErrors('achivement')}" th:errors="*{achivement}"></span>
-            <label>Skill: </label>
-            <input type="text" th:field="*{achivement}"/>
+            <span th:if="${#fields.hasErrors('degreetype')}" th:errors="*{degreetype}"></span>
+            <label>Degree type:  </label>
+            <input type="text" th:field="*{degreetype}"/>
+            <br/>
+            <span th:if="${#fields.hasErrors('degreename')}" th:errors="*{degreename}"></span>
+            <label>Degree name:  </label>
+            <input type="text" th:field="*{degreename}"/>
+            <br/>
+            <span th:if="${#fields.hasErrors('school')}" th:errors="*{school}"></span>
+            <label>School:  </label>
+            <input type="text" th:field="*{school}"/>
+            <br/>
+            <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span>
+            <label>Year of graduate:  </label>
+            <input type="date" th:field="*{year}"/>
             <br/>
 
             <br/>
@@ -28,7 +40,7 @@
 
 <div class="row">
     <div class="col-sm-7">
-        <form
+
 
 
     </div>

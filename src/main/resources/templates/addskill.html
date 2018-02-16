@@ -14,10 +14,14 @@
 
             <input type="hidden" th:field="*{id}"/>
 
-            <span th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}"></span>
+            <span th:if="${#fields.hasErrors('skillName')}" th:errors="*{skillName}"></span>
             <label>Skill: </label>
-            <input type="text" th:field="*{skill}"/>
-            <br/>
+            <input type="text" th:field="*{skillName}"/>
+            <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span> <br/>
+
+            beginner <input type="radio" th:field="*{rating}" name="rating" value="beginner" />
+            intermediate<input type="radio" th:field="*{rating}" name="rating" value="intermediate"/>
+            proficient<input type="radio" th:field="*{rating}" name="rating" value="proficient"/>
 
             <br/>
             <input type="submit" value="submit" name="Add skill"/>
@@ -28,7 +32,7 @@
 
 <div class="row">
     <div class="col-sm-7">
-        <form
+
 
 
     </div>
