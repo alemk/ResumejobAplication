@@ -37,12 +37,9 @@
     <div class="row" th:each="experience : ${experiences}">
         <span th:text="${experience.jobExperiance}"></span>
     </div>
-
+    <p>Skill</p>
     <div class="row" th:each="skill: ${skills}">
-        <p>Skill</p>
-        <span th:inline="text">
-            [[${skill.skillName}]] , [[${skill.rating}]]</span>
-
+        <span th:inline="text">[[${skill.skillName}]] , [[${skill.rating}]]</span>
     </div>
 </div>
 </body>
